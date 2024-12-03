@@ -1,5 +1,4 @@
 'use client'
-
 import NextLink from 'next/link'
 import { useActiveSectionContext } from '@/app/providers/activeSection/useActiveSectionContext'
 import { useState } from 'react'
@@ -10,22 +9,22 @@ import { Link } from '@/app/lib/types'
 
 type HamburgerMenuProps = { links: Link[] }
 
+const menuTrigger = {
+	visible: { scale: 1, opacity: 0.7, y: 0 },
+	tap: { scale: 0.85 },
+	hover: { scale: 1.2 }
+}
+
+const menuList = {
+	start: { scale: 0.6, opacity: 0.7, y: -20 },
+	visible: { scale: 1, opacity: 0.9, y: 0 }
+}
+
 const HamburgerMenu = ({ links }: HamburgerMenuProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const { activeSection, setActiveSection, setTimeOfLastClick } =
 		useActiveSectionContext()
-
-	const menuTrigger = {
-		visible: { scale: 1, opacity: 0.7, y: 0 },
-		tap: { scale: 0.85 },
-		hover: { scale: 1.2 }
-	}
-
-	const menuList = {
-		start: { scale: 0.6, opacity: 0.7, y: -20 },
-		visible: { scale: 1, opacity: 0.9, y: 0 }
-	}
 
 	return (
 		<div className='md:hidden top-5 right-5 fixed w-60 z-[999] flex flex-col items-end gap-2'>

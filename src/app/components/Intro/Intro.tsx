@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,6 +9,7 @@ import { useSectionInView } from '@/hooks/useSectionInView'
 import { motion } from 'framer-motion'
 import { Fade } from 'react-awesome-reveal'
 import { FaGithubSquare } from 'react-icons/fa'
+
 const Intro = () => {
 	const { ref } = useSectionInView('#home', 0.5)
 	const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext()
