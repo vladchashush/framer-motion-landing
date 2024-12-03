@@ -3,6 +3,7 @@ import { Sora } from 'next/font/google'
 import './globals.css'
 import ActiveSectionContextProvider from './providers/activeSection/activeSection'
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 
 const sora = Sora({
 	subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function RootLayout({
 				<ActiveSectionContextProvider>
 					<Header />
 					{children}
+					<Footer />
 				</ActiveSectionContextProvider>
 			</body>
 		</html>
