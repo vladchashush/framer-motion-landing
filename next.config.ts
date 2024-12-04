@@ -1,7 +1,18 @@
 import type { NextConfig } from 'next'
 
-const nextConfig: NextConfig = {
-	/* config options here */
-}
+const prod = process.env.NODE_ENV === 'production'
+
+const baseUrl = process.env.BASE_URL
+
+const nextConfig: NextConfig = prod
+	? {
+			output: 'export',
+			basePath: baseUrl,
+			images: {
+				loader: 'custom',
+				loaderFile: './customImageLoader.ts'
+			}
+		}
+	: {}
 
 export default nextConfig
