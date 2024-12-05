@@ -8,6 +8,7 @@ const nextConfig: NextConfig = prod
 	? {
 			output: 'export',
 			basePath: baseUrl,
+			distDir: './docs',
 			images: {
 				loader: 'custom',
 				loaderFile: './customImageLoader.ts'
